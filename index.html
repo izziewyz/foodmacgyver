@@ -11,45 +11,41 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-light bg-faded">
-        <a class="navbar-brand" href="#"> <img alt="Brand" src="assets/images/logo.png" width=50px> </a>
+<!--         <a class="navbar-brand" href="#"> <img alt="Brand" src="assets/images/logo.png" width=50px> </a> -->
+        <a class="navbar-brand" href="#"> <h1 class="text-center"> Food Macgyver </h1> </a>
+
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">About <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.html"><h5> About </h5> <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="contact.html"><h5>Contact</h5></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="portfolio.html">Guideline</a>
+                <a class="nav-link" href="portfolio.html"><h5>Guideline</h5></a>
             </li>
         </ul>
     </nav>
     <div class="container">
+
         <div class="row">
-            <div class="jumbotron">
-                <h1 class="text-center"> Food Macgyver </h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-5">
                 <br>
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Top search</div>
-                    <br>
+
                     <div class="panel-body">
                         <form>
                             <div class="form-group">
-                                <label for="searchTerm">Type Ingredient</label>
+                                <label for="searchTerm"><h5>Type Ingredient</h5></label>
                                 <input type="text" class="form-control" id="searchTerm" placeholder="Tomato">
                             </div>
                             <div class="form-group">
-                                <label for="numberRecords">Nuber of Recipes</label>
+                                <label for="numberRecords"><h5>Nuber of Recipes</h5></label>
                                 <input type="text" class="form-control" id="recordsRetrieve" placeholder="5">
                             </div>
                             <div class="form-group">
-                                <label for="startYear">Maximum Preparation Time (minutes)</label>
+                                <label for="startYear"><h5>Maximum Preparation Time (minutes)</h5></label>
                                 <input type="text" class="form-control" id="startYear" placeholder="20">
                             </div>
                             <button type="submit" class="btn btn-default" id="search">Add</button>
@@ -61,16 +57,16 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-5">
                 <br>
-                <div class="panel panel-primary" style="border:solid #9F000F">
-                    <div class="panel-heading" style="background-color: #9F000F ;  color:white ; padding:10px">Ingredients List
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><h5>Ingredients List</h5>
                     </div>
                     <div class="panel-body" style="padding:10px" id="wellSection">
                         <form action="">
-                            <input type="checkbox" checked="checked" value="ingredient1"> Tomato
+                            <input type="checkbox" checked="checked" value="ingredient1" class="checkbuttons"> Tomato
                             <br>
-                            <input type="checkbox" value="ingredient2"> Onion
+                            <input type="checkbox" value="ingredient2" class="checkbuttons"> Onion
                             <br>
                             <br>
                             <button type="submit" class="btn btn-default" id="Search">Search Recipe</button>
