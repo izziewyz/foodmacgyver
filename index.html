@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Diplomata+SC" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-faded">
+        <a class="navbar-brand" href="#"> <img alt="Brand" src="assets/images/logo.png" width=50px> </a>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">About <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="portfolio.html">Guideline</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
+                <h1 class="text-center"> Food Macgyver </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <br>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Top search</div>
+                    <br>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="searchTerm">Type Ingredient</label>
+                                <input type="text" class="form-control" id="searchTerm" placeholder="Tomato">
+                            </div>
+                            <div class="form-group">
+                                <label for="numberRecords">Nuber of Recipes</label>
+                                <input type="text" class="form-control" id="recordsRetrieve" placeholder="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="startYear">Maximum Preparation Time (minutes)</label>
+                                <input type="text" class="form-control" id="startYear" placeholder="20">
+                            </div>
+                            <button type="submit" class="btn btn-default" id="search">Add</button>
+                            <button type="submit" class="btn btn-default" id="clear">Clear Results</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+                <div class="panel panel-primary" style="border:solid #9F000F">
+                    <div class="panel-heading" style="background-color: #9F000F ;  color:white ; padding:10px">Ingredients List
+                    </div>
+                    <div class="panel-body" style="padding:10px" id="wellSection">
+                        <form action="">
+                            <input type="checkbox" checked="checked" value="ingredient1"> Tomato
+                            <br>
+                            <input type="checkbox" value="ingredient2"> Onion
+                            <br>
+                            <br>
+                            <button type="submit" class="btn btn-default" id="Search">Search Recipe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
