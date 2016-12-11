@@ -2,6 +2,7 @@
 
 
 $("#Search").on("click", function(event) {
+          $("#izzie").empty();
           event.preventDefault();
           console.log(searchString);
           // var ingredient =  $("#searchTerm").val().trim();
@@ -46,6 +47,8 @@ $("#Search").on("click", function(event) {
        	//document.getElementById("output").innerHTML = data.source; 
         }
         $(".imagebutton").on("click", function(event) {
+
+          $("#izzielist").empty();
           console.log($(this).attr("data2"));
 
            var id = $(this).attr("data2")
