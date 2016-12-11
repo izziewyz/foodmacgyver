@@ -64,7 +64,7 @@ $("#Search").on("click", function(event) {
 
       for(var j=0; j < data2[0].steps.length; j++){
        var steps2 =  data2[0].steps[j].step;
-       var steps2p = $("div")
+       var steps2p = $("<div>")
 
         steps2p.text(steps2);
        console.log(steps2);
