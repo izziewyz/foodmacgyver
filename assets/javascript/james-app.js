@@ -22,6 +22,7 @@ function renderCheckboxes()
 		    var b = $("<label>");
 		    b.attr("for", "checkboxID"+i);
 		    b.attr("text", ingredientsArray[i]);
+		    b.attr("class", "checkBoxText");
 		    b.text(ingredientsArray[i]);
 		    console.log(b);
 

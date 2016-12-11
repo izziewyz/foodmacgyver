@@ -48,6 +48,37 @@ $("#Search").on("click", function(event) {
         $(".imagebutton").on("click", function(event) {
           console.log($(this).attr("data2"));
 
+           var id = $(this).attr("data2")
+
+          $.ajax({
+    url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/' + id + '/analyzedInstructions?stepBreakdown=true', // The URL to the API. You can get this in the API page of the API you intend to consume
+    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
+    data: {}, // Additional parameters here
+    dataType: 'json',
+    success: function(data2) { 
+
+
+
+
+      console.log(data2); 
+
+      for(var j=0; j < data2[0].steps.length; j++){
+       var steps2 =  data2[0].steps[j].step;
+       var steps2p = $("div")
+
+        steps2p.text(steps2);
+       console.log(steps2);
+       $("#izzielist").append(steps2p);
+     }
+
+
+    },
+    error: function(err) { alert(err); },
+    beforeSend: function(xhr) {
+    xhr.setRequestHeader("X-Mashape-Authorization", "zRcHmtL8t0mshjUaxi3lu62rtX3zp13tQn4jsnSVdh6tVZBd1p"); // Enter here your Mashape key
+    }
+});
+
 
 
 
