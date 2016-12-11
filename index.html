@@ -12,43 +12,43 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-faded">
-<!--         <a class="navbar-brand" href="#"> <img alt="Brand" src="assets/images/logo.png" width=50px> </a> -->
-        <a class="navbar-brand" href="#"> <h1 class="text-center"> Food Macgyver </h1> </a>
 
+    <nav class="navbar navbar-light bg-faded">
+        <a class="navbar-brand" href="#"> <h1 class="text-center"> Food Macgyver </h1> </a>
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html"><h5> About </h5> <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#"><h5> About </h5> <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="contact.html"><h5>Contact</h5></a>
+                <a class="nav-link" href="#"><h5>Contact</h5></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="portfolio.html"><h5>Guideline</h5></a>
+                <a class="nav-link" href="#"><h5>Guideline</h5></a>
             </li>
         </ul>
     </nav>
+
+
     <div class="container">
-
-     <div class="container">
-
         <div class="row">
             <div class="col-sm-5">
                 <br>
                 <div class="panel panel-primary">
-
                     <div class="panel-body">
                         <form>
                             <div class="form-group">
-                                <label for="searchTerm"><h5>Type Ingredient</h5></label>
+                                <label for="searchTerm">
+                                    <h5>Type Ingredient</h5></label>
                                 <input type="text" class="form-control" id="searchTerm" placeholder="Tomato">
                             </div>
                             <div class="form-group">
-                                <label for="numberRecords"><h5>Nuber of Recipes</h5></label>
+                                <label for="numberRecords">
+                                    <h5>Nuber of Recipes</h5></label>
                                 <input type="text" class="form-control" id="recordsRetrieve" placeholder="5">
                             </div>
                             <div class="form-group">
-                                <label for="startYear"><h5>Maximum Preparation Time (minutes)</h5></label>
+                                <label for="startYear">
+                                    <h5>Maximum Preparation Time (minutes)</h5></label>
                                 <input type="text" class="form-control" id="startYear" placeholder="20">
                             </div>
                             <button type="submit" class="btn btn-default" id="add">Add</button>
@@ -63,7 +63,8 @@
             <div class="col-sm-5">
                 <br>
                 <div class="panel panel-primary">
-                    <div class="panel-heading"><h5>Ingredients List</h5>
+                    <div class="panel-heading">
+                        <h5>Ingredients List</h5>
                     </div>
                     <div class="panel-body" style="padding:10px" id="wellSection">
                         <form action="" id="checkboxDiv">
@@ -72,17 +73,17 @@
                             <input type="checkbox" value="ingredient2" class="checkbuttons"> Onion
                             <br>
                             <br>
-                            
                         </form>
                     </div>
-                        <button type="submit" class="btn btn-default" id="Search">Search Recipe</button>
-                        <label text="hello"></label>
-                    
+                    <button type="submit" class="btn btn-default" id="Search">Search Recipe</button>
+                    <label text="hello"></label>
                 </div>
             </div>
         </div>
+    </div>
 
-    <div id = "izzie"></div>
+    <div id="izzie"></div>
+
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     <script type="text/javascript" src="assets/javascript/james-app.js"></script>
 </body>

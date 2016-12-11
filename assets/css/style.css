@@ -13,7 +13,7 @@ font-size: 30px;
 
 body{
 	background-image: url("../images/background.jpg");
-	width:100%;
+	background-size: 100%;
 }
 
 .jumbotron{
@@ -30,20 +30,8 @@ body{
 	background-color: #9F000F;
 	color: white;
 	text-align: center;
-/*	padding-top:10px;
-	padding-bottom: 10px;
-	height: 80px;*/
-
 }
 
-/*.panel-primary{
-	border:solid #9F000F;
-	}
-
-.panel-heading{
- background-color: #9F000F ;  
- color:white ; padding:10px ;
-}*/
 
 .panel-body{
 	padding:10px;
@@ -51,8 +39,14 @@ body{
 
 .checkbuttons{
 	color:white;
+	margin: 5px;
 }
 
 .imagebutton{
 	width:200px;
+}
+
+.checkBoxText{
+    color:white;
+    margin: 5px;
 }
