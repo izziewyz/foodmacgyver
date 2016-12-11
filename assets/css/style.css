@@ -1,16 +1,19 @@
 
 h1{
-font-family: 'Diplomata SC', cursive;
-font-size: 30px;
+/*font-family: 'Diplomata SC', cursive;*/
+font-family: 'Engagement', cursive;
+font-size: 40px;
 }
 
 h5{
 color: white;
-font-size: 20px;
+font-family: 'Engagement', cursive;
+font-size: 30px;
 }
 
 body{
 	background-image: url("../images/background.jpg");
+	width:100%;
 }
 
 .jumbotron{
@@ -48,4 +51,8 @@ body{
 
 .checkbuttons{
 	color:white;
+}
+
+.imagebutton{
+	width:200px;
 }
