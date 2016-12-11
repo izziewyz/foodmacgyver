@@ -9,7 +9,20 @@ $("#Search").on("click", function(event) {
 
           // event.preventDefault() can be used to prevent an event's default behavior.
           // Here, it prevents the submit button from trying to submit a form when clicked
-        
+ 
+
+  //User press a key
+document.addEventListener('keyup', function(event) {
+
+           var keyPress = event.keyCode;
+
+           //unless the key is a letter, the code will not run
+           if (!(keyPress >= 65 && keyPress <= 120) && (keyPress != 32 && keyPress != 0)) {
+               event.preventDefault();
+               alert("Game only works with letter keys. No numbers or symbol keys");
+
+           }
+});      
 
  $.ajax({
     url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=" + ingredient + "&limitLicense=false&number=5&ranking=2" , // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
@@ -59,6 +72,10 @@ $("#Search").on("click", function(event) {
     xhr.setRequestHeader("X-Mashape-Authorization", "zRcHmtL8t0mshjUaxi3lu62rtX3zp13tQn4jsnSVdh6tVZBd1p"); // Enter here your Mashape key
     }
 });
+
+
+
+
 })
   
 
