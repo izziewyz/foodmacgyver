@@ -11,19 +11,7 @@ $("#Search").on("click", function(event) {
           // Here, it prevents the submit button from trying to submit a form when clicked
  
 
-  //User press a key
-document.addEventListener('keyup', function(event) {
-
-           var keyPress = event.keyCode;
-
-           //unless the key is a letter, the code will not run
-           if (!(keyPress >= 65 && keyPress <= 120) && (keyPress != 32 && keyPress != 0)) {
-               event.preventDefault();
-               alert("Game only works with letter keys. No numbers or symbol keys");
-
-           }
-});      
-
+ 
  $.ajax({
     url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=" + searchString + "&limitLicense=false&number=5&ranking=2" , // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
     type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
