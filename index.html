@@ -30,6 +30,8 @@
     </nav>
     <div class="container">
 
+     <div class="container">
+
         <div class="row">
             <div class="col-sm-5">
                 <br>
@@ -42,14 +44,14 @@
                                 <input type="text" class="form-control" id="searchTerm" placeholder="Tomato">
                             </div>
                             <div class="form-group">
-                                <label for="numberRecords"><h5>Number of Recipes</h5></label>
+                                <label for="numberRecords"><h5>Nuber of Recipes</h5></label>
                                 <input type="text" class="form-control" id="recordsRetrieve" placeholder="5">
                             </div>
                             <div class="form-group">
                                 <label for="startYear"><h5>Maximum Preparation Time (minutes)</h5></label>
                                 <input type="text" class="form-control" id="startYear" placeholder="20">
                             </div>
-                            <button type="submit" class="btn btn-default" id="search">Add</button>
+                            <button type="submit" class="btn btn-default" id="add">Add</button>
                             <button type="submit" class="btn btn-default" id="clear">Clear Results</button>
                         </form>
                     </div>
@@ -64,19 +66,21 @@
                     <div class="panel-heading"><h5>Ingredients List</h5>
                     </div>
                     <div class="panel-body" style="padding:10px" id="wellSection">
-                        <form action="">
+                        <form action="" id="checkboxDiv">
                             <input type="checkbox" checked="checked" value="ingredient1" class="checkbuttons"> Tomato
                             <br>
                             <input type="checkbox" value="ingredient2" class="checkbuttons"> Onion
                             <br>
                             <br>
-                            <button type="submit" class="btn btn-default" id="Search">Search Recipe</button>
+                            
                         </form>
                     </div>
+                        <button type="submit" class="btn btn-default" id="Search">Search Recipe</button>
+                        <label text="hello"></label>
+                    
                 </div>
             </div>
         </div>
-
 
     <div id = "izzie"></div>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
