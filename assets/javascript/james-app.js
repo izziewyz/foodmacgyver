@@ -43,7 +43,7 @@ function renderCheckboxes()
 		ingredientsArray.push(newIngredient);
 		
 		renderCheckboxes();
-		$("#searchTerm").val = " ";
+		$("#searchTerm").val("");
 		//Converting array to string in format required by spoonacular api
 		ingredientsString = ingredientsArray.toString();
 		searchString = ingredientsString.replace(/,/gi , "%2C");
