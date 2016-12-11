@@ -1,23 +1,18 @@
+
 var ingredientsArray = [];
+var ingredientsString = "";
+var searchString = "";
 
 function renderCheckboxes()
 	{ 
 
 		// Empties the div prior to adding new buttons (this is necessary otherwise you will have repeat buttons)
 		$("#wellSection").empty();
-		// Loops through the array of ingredients
+		// Loops through the array of ingredients and generates check boxes and labels for each
 		for (var i = 0; i < ingredientsArray.length; i++)
 		{
 
-			// Then dynamicaly generates buttons for each item in the array
-			//----------------------------------------------------------------
-		    // var a = $("<button>"); // This code $('<button>') is all jQuery needs to create the beginning and end tag. (<button></button>)
-		    // // a.addClass('gifbutton'); // Added a class 
-		    // a.attr("data-name", ingredientsArray[i]); // Added a data-attribute
-		    // a.text(ingredientsArray[i]); // Provided the initial button text
-		    // $("#wellSection").append(a); // Added the button to the HTML
-		    //----------------------------------------------------------------
-		    var a = $("<input>"); // This code $('<button>') is all jQuery needs to create the beginning and end tag. (<button></button>)
+		    var a = $("<input>"); 
 		    // a.attr("class","ingredientCheckBox"); // Added a class 
 		    a.attr("type", "checkbox"); // 
 		    a.attr("value", ingredientsArray[i]); // 
@@ -34,11 +29,10 @@ function renderCheckboxes()
 		    $("#wellSection").append(b); // Added the label to the HTML
 		    // $("#wellSection").append(b+ingredientsArray[i].val()); // Added the label to the HTML
 
-		    //------------------------------------------------------------------
 		}
 	};
 
-		// This function handles events where one button is clicked
+		// This function handles events when the add button is clicked
 	$("#add").on('click', function(){
 
 		// This line of code will grab the input from the textbox
@@ -48,11 +42,12 @@ function renderCheckboxes()
 		// The movie from the textbox is then added to our array
 		ingredientsArray.push(newIngredient);
 		
-		// Our function then runs which handles the processing of our buttons/topics array
 		renderCheckboxes();
-		$("#searchTerm").text = " ";
+		$("#searchTerm").val = " ";
+		//Converting array to string in format required by spoonacular api
+		ingredientsString = ingredientsArray.toString();
+		searchString = ingredientsString.replace(/,/gi , "%2C");
 		// We have this line so that users can hit "enter" instead of clicking on submit button and it won't move to the next page
 		return false;
 	});
 
-	// write stringify function here and replace commas with %whatever is needed for Ajax call
