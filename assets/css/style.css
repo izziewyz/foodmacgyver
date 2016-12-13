@@ -16,6 +16,10 @@ body{
 	background-size: 100%;
 }
 
+p{
+	color:white;
+}
+
 .jumbotron{
 	background-color: #9F000F;
 	color: white;
@@ -50,3 +54,9 @@ body{
     color:white;
     margin: 5px;
 }
+
+.izzielist{
+	color:white;
+	size: 5px;
+}
+

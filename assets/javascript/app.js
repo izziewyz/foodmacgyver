@@ -24,22 +24,25 @@ $("#Search").on("click", function(event) {
 
        for(var i=0; i < data.length; i++){
 
-        // var recipediv = $('<div>') 
+       var recipediv = $('<div>') 
+       recipediv.attr("class", "col-sm-2")
+       recipediv.attr("style", "margin:14px")
 
       var recipetitle =$("<p>")
 
     	 var recipeimage = $("<img>");
 
       recipetitle.text(data[i].title)
+      
 
        recipeimage.attr("src", data[i].image);
        recipeimage.attr("class", "imagebutton")
        recipeimage.attr("data2", data[i].id);
 
-       $("#izzie").prepend(recipetitle);
-       $("#izzie").prepend(recipeimage);
+       recipediv.prepend(recipetitle);
+       recipediv.prepend(recipeimage);
 
-       //$("#izzie").html(recipediv);
+       $("#izzie").prepend(recipediv);
 
 
         //Change data.source to data.something , where something is whichever part of the object you want returned.
@@ -69,7 +72,7 @@ $("#Search").on("click", function(event) {
 
       for(var j=0; j < data2[0].steps.length; j++){
        var steps2 =  data2[0].steps[j].step;
-       var steps2p = $("<div>")
+       var steps2p = $("<p>")
 
         steps2p.text(steps2);
        console.log(steps2);
@@ -84,7 +87,19 @@ $("#Search").on("click", function(event) {
     }
 });
 
+       var type = searchString
+       var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=dc6zaTOxFJmzC&limit=10";
 
+
+  $.ajax({url: queryURL, method: 'GET'})
+   .done(function(response) {
+       console.log(response);
+       var macgiphy = $("<img>")
+       var randomnumber = Math.floor((Math.random() * 10) + 1);
+       console.log(randomnumber)
+       macgiphy.attr("src", response.data[randomnumber].images.fixed_height.url);
+       $("#giphy").html(macgiphy);
+  });
 
 
 
