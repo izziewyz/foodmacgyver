@@ -1,54 +1,75 @@
 
+// Declaring global variables to utilzie across all js files
+
 var ingredientsArray = [];
 var ingredientsString = "";
 var searchString = "";
 
-function renderCheckboxes()
-	{ 
 
-		// Empties the div prior to adding new buttons (this is necessary otherwise you will have repeat buttons)
-		$("#wellSection").empty();
-		// Loops through the array of ingredients and generates check boxes and labels for each
-		for (var i = 0; i < ingredientsArray.length; i++)
-		{
 
-		    var a = $("<input>"); 
-		    // a.attr("class","ingredientCheckBox"); // Added a class 
-		    a.attr("type", "checkbox"); // 
-		    a.attr("value", ingredientsArray[i]); // 
-		    a.attr("id", "checkboxID"+i);
-		    console.log(a);
-		    
-		    var b = $("<label>");
-		    b.attr("for", "checkboxID"+i);
-		    b.attr("text", ingredientsArray[i]);
-		    b.attr("class", "checkBoxText");
-		    b.text(ingredientsArray[i]);
-		    console.log(b);
-
-		    $("#wellSection").append(a); // Added the checkbox to the HTML
-		    $("#wellSection").append(b); // Added the label to the HTML
-		    // $("#wellSection").append(b+ingredientsArray[i].val()); // Added the label to the HTML
-
-		}
-	};
-
-		// This function handles events when the add button is clicked
-	$("#add").on('click', function(){
-
-		// This line of code will grab the input from the textbox
-		var newIngredient = $("#searchTerm").val().trim();
-		// Empty input field 
-		// $('#gif-input').text(" ");
-		// The movie from the textbox is then added to our array
-		ingredientsArray.push(newIngredient);
+	// This function adds the ingredient when the add button is clicked
+	$("#add").on('click', function()
+	{
+   		
+   		// var letters = /^[A-Za-z]+$/;  
 		
-		renderCheckboxes();
-		$("#searchTerm").val("");
-		//Converting array to string in format required by spoonacular api
-		ingredientsString = ingredientsArray.toString();
-		searchString = ingredientsString.replace(/,/gi , "%2C");
-		// We have this line so that users can hit "enter" instead of clicking on submit button and it won't move to the next page
+		// if 
+			// Getting value from user input ingredient field and storing in newIngredient
+			var newIngredient = $("#searchTerm").val().trim();
+			
+			// Creating an input tag and assigning attributes
+			var a = $("<input>"); 
+			a.attr("type", "checkbox"); // 
+
+			// Creating label tag and assigning attributes
+		    var b = $("<label>");
+		    b.attr("class", "checkBoxText");
+			b.text(newIngredient);
+
+			// Prepending input tag inside label tag
+		    b.prepend(a);
+
+		    // Adding combined tags to html
+		    $("#wellSection").append(b); // Added the checkbox to the HTML
+
+			// Empty input field 
+			$("#searchTerm").val("");
+
+			// Next line of code to prevent page reload and allow user to hit the enter key instead of clicking
+			return false;
+	});
+
+	
+	// This function handles events when the add button is clicked
+	$("#Clearbox").on('click', function()
+	{
+		// Removes parent (ie the label tag) associated with each "checked" checkbox
+		$(":checked").parent().remove();
+		// Next line of code to prevent page reload and allow user to hit the enter key instead of clicking
 		return false;
 	});
 
+
+	$("#Search").on('click', function()
+	{ 
+
+		//-----------------------------------------------------------------------------
+	    // Items between these 2 dashed lines added by James
+	    // Re-initializes ingredientsArray before rebuilding the array based on what is left 
+	    // in html after some checkboxes have been removed
+	    ingredientsArray=[];
+	    console.log(ingredientsArray);
+
+	    // Loops through each checkbox object, grabs the text and stores in ingredientsArray
+	    $(".checkBoxText").each(function()
+	    {
+	      ingredientsArray.push($(this).text());
+	    })
+
+	    ingredientsString = ingredientsArray.toString();
+	    searchString = ingredientsString.replace(/,/gi , "%2C");
+	    console.log(ingredientsArray);
+	    console.log(searchString)
+	    //-----------------------------------------------------------------------------
+
+	});	

@@ -77,6 +77,17 @@ $("#Search").on("click", function(event) {
         steps2p.text(steps2);
        console.log(steps2);
        $("#izzielist").append(steps2p);
+
+       	$("#speech").on("click", function() {
+
+
+		responsiveVoice.speak(steps2);
+
+			})
+
+
+
+
      }
 
 
@@ -117,6 +128,8 @@ $("#Search").on("click", function(event) {
 
 
 })
+
+
   
 
 
